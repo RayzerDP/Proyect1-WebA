@@ -1,0 +1,50 @@
+
+
+
+    <header appStickyHeader>
+       <a href="" class="logo">Diego.</a>
+       
+       <ng-container>
+        <i class='bx bx-menu' id="menu-icon" appMenuIcon></i>
+      </ng-container>
+      
+
+       <nav class="navbar">
+
+        <a class="active" routerLink="/sobre-mi" [routerLinkActive]="['actived']">Inicio</a>
+        <a class="active" routerLink="/create" [routerLinkActive]="['actived']">Sobre mi</a>
+        <a class="active" routerLink="/education" [routerLinkActive]="['actived']">Educacion</a>
+        <a class="active" routerLink="/skills" [routerLinkActive]="['actived']">Habilidades</a>
+        <a class="active" routerLink="/proyectos"  [routerLinkActive]="['actived']">Proyectos</a>
+
+       </nav>
+        
+       <span class="active-nav"></span>
+    </header>
+
+    <section id="contentP">
+
+        <router-outlet></router-outlet>
+
+    </section>
+
+
+<footer class="footer">
+    <div class="footer-text">
+         <p>Copyright &copy; 2023 por DiegoP | Todos los derechos reservador</p>
+    </div>
+
+    <div class="footer-top">
+          <a href="#">
+            <ng-container>
+               <i class='bx bxs-up-arrow'></i>
+            </ng-container>
+          </a>
+    </div>
+
+
+</footer>
+    <script src="./js/button.js"></script>
+    <script src="./js/timeImg.js"></script>
+    <script src="./js/validationform.js"></script>
+

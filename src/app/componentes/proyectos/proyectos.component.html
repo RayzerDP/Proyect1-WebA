@@ -1,0 +1,58 @@
+<div class="container">
+    <h2 class="cabecera">Proyectos</h2>
+
+     <table>
+        <thead>
+            <tr>
+                <th>Nombre Proyecto</th>
+                <th>Descripcion Proyecto</th>
+                <th>Categoria Proyecto</th>
+                <th>Lenguaje Proyecto</th>
+            </tr>
+        </thead>
+
+        <tbody *ngFor="let project of projects" >
+            <tr>
+                <td>{{project.name}}</td>
+                <td>{{project.descripcion}}</td>
+                <td>{{project.categoria}}</td>
+                <td>{{project.lenguajes}}</td>
+            </tr>
+ 
+        </tbody>
+
+     </table>
+</div>
+
+
+<SEction class="Project" id="Project">
+    <h2 class="cabecera">Crear <span>proyecto</span></h2>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <div class="input-box">
+            <div class="input-field">
+                <input type="text" placeholder="Insertar Nombre" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+            </div>
+
+            <div class="input-field">
+                <input type="text" placeholder="Insertar Descripcion" name="descripcion" #name="ngModel" [(ngModel)]="project.descripcion" required>      
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="input-field">
+                <input type="text" placeholder="Insertar Categoria" name="categoria" #name="ngModel" [(ngModel)]="project.categoria" required>
+            </div>
+
+            <div class="input-field">
+                <input type="text" placeholder="Insertar Lenguaje" name="lenguajes" #name="ngModel" [(ngModel)]="project.lenguajes" required>
+            </div>
+        </div>
+
+        <Div class="btn-box btns">
+            <button type="submit" class="btn">Enviar</button>
+        </Div>
+    
+    </form>
+    
+</SEction>

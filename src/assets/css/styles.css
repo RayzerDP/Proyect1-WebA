@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "~boxicons/css/boxicons.min.css"; /*se instala en el proyecto y se importa en la carpeta css*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{ /*se establecen estilos personalizados para hacer el llamado de estos en otros elemento html*/
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;  
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/*HEADER*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    background: var(--second-bg-color);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; /*para que los elementos se sobrepongan a los demas*/
+    transition: .4s;
+}
+
+.logo{
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.2rem;
+    text-decoration: none;
+    transition: 1.7s;
+}
+
+.navbar a:hover,
+.navbar a.actived
+{
+    color: var(--main-color);
+}
+
+.bx-menu{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /*para que no se revele*/
+}
+
+/*HEADER*/
+
+/*SECCION YO*/
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.inicio{
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+}
+
+.inicio-content{
+    max-width: 60rem;
+}
+
+.inicio-content h1{
+    font-size: 5.2rem;
+    font-weight: 650;
+    line-height: 1.3; /*ajusta el ancho de una letra por ejemplo*/
+}
+
+.inicio-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+
+.inicio-content .texto-animate{
+    position: relative;
+    width: 37.2rem;
+}
+
+.inicio-content .texto-animate h3{
+    font-size: 3.2rem;
+    font-weight: 6  70;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color); /*para crear un borde alrededor del texto con un ancho de 0.7px y un color definido por la variable --main-color.*/
+}
+
+.btn-box{
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    width: 34.5rem;
+    height: 5rem;
+}
+
+.btn-box .btn{
+    width: 150px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 4.5rem;
+    background: var(--main-color );
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem; 
+    z-index: 1;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: yellowgreen;
+    border-radius: .6rem; 
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover::before {
+   width: 100%;
+}
+
+.inicio-redes{
+    margin-top: 2rem;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inicio-redes a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    transition: .5s;
+    margin-top: 1rem;
+}
+
+.inicio-redes a:hover{
+    color: var(--bg-color);
+}
+
+.inicio-redes a::before {  /*REVISAR ESTE PARA LOS BOTONES ANTERIORES EN ESPECIAL LA CLASE YA QUE EN ESTE LOS LINKS NO TIENEN CLASE*/
+    content: '';
+    position: absolute;
+    top: 0; /* Ajustar para centrar verticalmente el evento*/
+    left: 0; 
+    width: 0; /* El pseudo-elemento será el doble de ancho del botón */
+    height: 100%;
+    background: yellowgreen;
+    z-index: -1;
+    transition: .5s;
+    border-radius: 50%;
+}
+
+.inicio-redes a:hover:before {
+    width: 100%; /* El pseudo-elemento será el doble de ancho del botón */
+  
+}
+
+
+/*SECCION YO*/
+
+/*SOBRE MI*/
+
+.sobre-mi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+
+.cabecera{
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span{
+    color: var(--main-color);
+    margin-left: 1rem;
+}
+
+.cabecera span{
+    margin: 0 0 0 1rem;
+ }
+
+.sobremi-content{
+    text-align: center;
+}
+
+.sobremi-content h3{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.sobremi-content p{
+    font-size: 1.5rem;
+    margin: 2rem 0 3rem;
+    text-align: justify;
+}
+
+.btn-box .btns{
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before{
+    background: yellowgreen;
+}
+
+h4{
+    color: var(--main-color);
+    font-size: 1.6rem;
+    margin-bottom: -10px;
+}
+
+h5{
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+
+/*SOBRE MI*/
+
+
+/*EDUCACION*/
+
+.educacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: auto; /*FALTA AVERIGUAR*/
+    padding-bottom: 5rem;
+}
+
+
+.educacion .educacion-row{
+    display: flex;
+    flex-wrap: wrap; /*para que se adapten a la caja de acuerdo al tamaño*/
+    gap: 5rem;
+}
+
+.educacion-row .educacion-column{
+    flex: 1 1 40rem; /*FALTA AVERIGUAR*/
+}
+
+.educacion-column .title{
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.educacion-box{
+    border-left: .2rem solid var(--main-color);
+}
+
+.educacion-box .educacion-content{
+    position: relative;
+    padding-left: 2rem;
+}
+
+.educacion-content .content{
+    position: relative;
+    padding: 1.9rem;
+    border: 0.6rem solid var(--main-color);
+    border-radius: 5rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.educacion-content .content::before{
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0;
+   height: 100%;
+   background: var(--second-bg-color);
+   z-index: -1;
+   transition: .8s;
+}
+
+.educacion-content .content:hover::before{
+   width: 100%;
+}
+
+.educacion-content .content .year{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+    
+}
+
+.educacion-content .content h3{
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.educacion-content .content li{   
+    font-size: 1.2rem;
+}
+
+/*EDUCACION*/
+
+/*HABILIDADES*/
+
+.skills{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.skills .skills-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-row .skills-column{
+    flex: 1 1 40rem;
+}
+
+.skills-column .title{
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.skills-box .skills-content{
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    position: relative;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills-box .skills-content::before{
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0;
+   height: 100%;
+   background: var(--bg-color);
+   z-index: -1;
+   transition: .8s;
+}
+
+.skills-box .skills-content:hover:before{
+    width: 100%;
+}
+
+.skills-content .progress{
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3 span{
+    color: var(--text-color);
+}
+
+span{
+    margin-left: 0rem;
+}
+
+.skills-content .progress .barra{
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem;
+    margin: 1rem 0;
+    height: 2.5rem;
+}
+
+.skills-content .progress .barra span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .barra span{
+    width: 80%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .barra span{
+    width: 70%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .barra span{
+    width: 60%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .barra span{
+    width: 60%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .barra span{
+    width: 50%;
+}
+
+/*SEGUNDA COLUMNA*/
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .barra span{
+    width: 70%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .barra span{
+    width: 80%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .barra span{
+    width: 70%;
+}
+
+/*HABILIDADES*/
+
+/*PROJECTOS*/
+
+.Project{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+
+.Project form{
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Project form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /*para que se adapten a la caja de acuerdo al tamaño*/
+}
+
+.input-box .input-field::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .8s;
+ }
+
+.input-box .input-field:hover:before{
+    width: 100%;
+}
+
+.Project form .input-box .input-field{
+    position: relative;
+    margin: 1rem 0;
+}
+
+.Project form .input-box .input-field input{
+    width: 40rem;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.Project form .input-box .input-field input::placeholder{
+    color: var(--text-color);
+}
+
+.Project form .btn-box.btns .btn{
+    margin-top: 3rem;
+    cursor: pointer;
+    height: 5rem;
+}
+
+
+table{
+    width: 100%;
+    background: var(--bg-color);
+    min-height: auto;
+    max-width: 100rem;
+    margin: 0 auto;
+    border: 1px solid var(--main-color);
+}
+
+thead th{
+    background: var(--main-color);
+    font-size: 1.8rem;
+} 
+
+tr td{
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*PROJECTOS*/
+
+
+/*FOOTER*/
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 2.6rem;
+}
+
+.footer-top a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background:var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem; 
+    z-index: 1;
+    text-decoration: none;
+}
+
+.footer-top a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: yellowgreen;
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-top a:hover::before{
+    width: 100%;
+}
+
+.footer-top a i{
+    font-size: 2.4rem;
+    color: var(--text-color);
+}
+
+.footer-top a:hover i{
+    color: var(--text-color);
+    transition: .5s;
+}
+
+
+/*FOOTER*/
+
+
+/*MEDIAS QUERY*/
+
+@media (max-width: 1200px) {
+    html{
+        font-size: 45%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header{
+        padding: 2rem 4%;
+    }
+
+    section{
+        padding: 10rem 4% 2rem;
+    }
+
+    .yo{
+        padding: 0 4%;
+    }
+
+    .footer{
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon{
+        display: block;
+        margin-left: 40rem;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        padding: 1rem 4%;
+        background: transparent;
+        transition: .25s ease;
+        transition-delay: .25s;
+        z-index: 1;
+    }
+
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+        width: 100%;
+        left: -100;
+        background: yellowgreen;
+    }
+
+    .navbar .active-nav{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: yellowgreen;
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: .25s;
+        width: 100%;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+}
+
+@media (max-width: 456px){
+    .cabecera span{
+       margin: 0 0 0 1rem;
+    }
+
+}
